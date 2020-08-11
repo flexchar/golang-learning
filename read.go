@@ -27,7 +27,7 @@ func main() {
 	contents, err := ioutil.ReadFile(fileName)
 
 	if err != nil {
-		fmt.Errorf("Something went wrong: %s", err)
+		fmt.Printf("Something went wrong: %s", err)
 	}
 
 	names := strings.Split(string(contents), "\n")
@@ -41,8 +41,11 @@ func main() {
 		}
 		listOfNames = append(listOfNames, theName)
 
-		// fmt.Println(parts[0])
+		// fmt.Println(parts)
 	}
 
-	fmt.Println(listOfNames)
+	for _, name := range listOfNames {
+		fmt.Printf("First name: %s, Last name: %s\n", name.fname, name.lname)
+	}
+
 }
